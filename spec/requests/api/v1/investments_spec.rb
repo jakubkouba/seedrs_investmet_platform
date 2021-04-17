@@ -21,5 +21,25 @@ RSpec.describe Api::V1::InvestmentsController do
         expect { create_investment }.to change { Investment.count }.by(1)
       end
     end
+
+    context 'when investment is invalid' do
+      let(:params) { { amount: 1000, campaign_id: 0 } }
+
+      it 'returns bad request response' do
+        create_investment
+
+        expect(response).to have_http_status(400)
+      end
+
+      it 'does not create investment' do
+        expect { create_investment }.not_to change { Investment.count }
+      end
+
+      it 'returns error message' do
+        create_investment
+
+        expect(parsed_response.keys).to match(%w[error message])
+      end
+    end
   end
 end
