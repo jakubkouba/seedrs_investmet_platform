@@ -1,5 +1,5 @@
 class Investment < ApplicationRecord
   belongs_to :campaign
 
-  validates :amount, presence: true
+  validates :amount, :campaign, presence: true
 end
