@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Campaign < ApplicationRecord
-  validates :name, presence: true
+  validates :name, :target_amount, presence: true
 end
