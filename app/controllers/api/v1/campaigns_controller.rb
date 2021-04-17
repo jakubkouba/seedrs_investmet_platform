@@ -4,7 +4,7 @@ module Api
   module V1
     class CampaignsController < ApplicationController
       def index
-        render json: {}
+        render json: Campaign.all.to_json
       end
     end
   end
