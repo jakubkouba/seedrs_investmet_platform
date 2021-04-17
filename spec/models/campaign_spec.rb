@@ -11,4 +11,6 @@ RSpec.describe Campaign, type: :model do
   it { is_expected.to validate_length_of(:name).is_at_most(256) }
   it { is_expected.to validate_length_of(:sector).is_at_most(256) }
   it { is_expected.to validate_length_of(:country).is_at_most(256) }
+
+  it { is_expected.to have_many :investments }
 end
