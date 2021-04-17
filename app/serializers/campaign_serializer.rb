@@ -1,3 +1,3 @@
 class CampaignSerializer < ActiveModel::Serializer
-  attributes :name, :image, :percent_raised, :target_amount, :sector, :country
+  attributes :id, :name, :image, :percent_raised, :target_amount, :investment_multiple, :sector, :country
 end
