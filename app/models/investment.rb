@@ -17,5 +17,7 @@ class Investment < ApplicationRecord
 
     campaign = Campaign.find(campaign_id)
     (amount % campaign.investment_multiple).zero?
+  rescue ActiveRecord::RecordNotFound
+    false
   end
 end
