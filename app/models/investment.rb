@@ -1,5 +1,5 @@
 class Investment < ApplicationRecord
-  belongs_to :campaign
+  belongs_to :campaign, counter_cache: true
 
   validates :amount, :campaign, presence: true
   validate :investment_multiple
