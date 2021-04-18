@@ -43,8 +43,10 @@ a campaign with `id = 1` and `investment_multiple = 45305.0`. Then the investmen
 `$ curl --location --request POST 'localhost:3000/api/v1/investments' --header 'Content-Type: application/json' --data-raw '{ "amount": 45305.0, "campaign_id": 1}'`
 
 ### TODO
-- fix failing specs
-- permit pagination params
-- 500 error on create investments
+- Handle exceptions for 500, 400
 - improve search (when search by two attributes the search result is empty)
+- better implementation of the investment multiple validation and api response
+- Dry up campaigns api spec (include module to parse the response body)
+- Add Swagger to describe api endpoints
 - use resource method for generating routes
+- issues with permitted params
